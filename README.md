@@ -60,9 +60,10 @@ Write a Dockerfile that includes multiple stages:
 3.	Copy Artifacts:
 Use the COPY command to copy only the necessary application artifacts from the build stage to the runtime stage. 
 4.	Build and Run:
-Build the Docker image using docker build and run the container using docker run. 
-Example: 1
+Build the Docker image using docker build and run the container using docker run.
 
+Example: 1
+############################################
 # Stage 1: Build stage (using a standard Linux distribution)
 FROM ubuntu:latest AS builder
 
@@ -83,7 +84,7 @@ COPY --from=builder /app/ <application-artifacts>
 
 CMD ["python3", "<application-entrypoint>"]
 
-
+##########################################
 Example: 2
 ###########################################
 # BASE IMAGE
@@ -110,6 +111,8 @@ COPY --from=build /app /app
 
 # Set the entrypoint for the container to run the binary
 ENTRYPOINT ["/app"]
+############################################
+![image](https://github.com/user-attachments/assets/27760657-cdcd-463a-adc1-3588293ff6a1)
 
 Benefits of using Distroless Images with Multi-Stage Builds:
 •	Reduced Image Size:
