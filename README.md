@@ -65,15 +65,22 @@ Example: 1
 
 # Stage 1: Build stage (using a standard Linux distribution)
 FROM ubuntu:latest AS builder
+
 RUN apt-get update && apt-get install -y --no-install-recommends <build-tools>
+
 WORKDIR /app
+
 COPY . .
+
 RUN <build-commands>
 
 # Stage 2: Runtime stage (using a distroless image)
 FROM distroless/python3-debian12 AS runtime
+
 WORKDIR /app
+
 COPY --from=builder /app/ <application-artifacts>
+
 CMD ["python3", "<application-entrypoint>"]
 
 
