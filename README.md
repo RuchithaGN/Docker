@@ -27,6 +27,11 @@ Feature	ENTRYPOINT	CMD
 Purpose	Defines the main executable	Provides default arguments to ENTRYPOINT (or the main command if no ENTRYPOINT exists)
 Override	Cannot be overridden by arguments passed to docker run	Can be overridden by arguments passed to docker run
 Usage	Always executed when the container starts	Provides default arguments that can be changed when running the container
+Feature	ENTRYPOINT	CMD
+Purpose	Defines the main executable	Provides default arguments to ENTRYPOINT (or the main command if no ENTRYPOINT exists)
+Override	Cannot be overridden by arguments passed to docker run	Can be overridden by arguments passed to docker run
+Usage	Always executed when the container starts	Provides default arguments that can be changed when running the container
+![image](https://github.com/user-attachments/assets/00624746-a5a6-45d0-a346-309da41f726b)
 
 DISTROLESS IMAGES
 
@@ -123,5 +128,3 @@ Fewer components in the image mean a smaller attack surface and fewer vulnerabil
 Smaller images consume fewer resources, leading to better resource utilization. 
 •	Simplified Dependency Management:
 Clearer dependency management, as only necessary dependencies are included. 
-
-![image](https://github.com/user-attachments/assets/39f313c0-bef3-4549-b552-694d534c679e)
