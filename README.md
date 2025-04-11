@@ -90,6 +90,8 @@ COPY --from=builder /app/ <application-artifacts>
 CMD ["python3", "<application-entrypoint>"]
 
 ##########################################
+
+
 Example: 2
 ###########################################
 # BASE IMAGE
